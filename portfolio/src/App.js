@@ -1,12 +1,11 @@
-import Hoddie from "./assets/images/hoddie.png"
+import Navbar from "./components/Navbar";
+
+
 
 function App() {
   return (
    <>
-   <div>
-    <h1>Happy to see our first React app</h1>
-    <img src={Hoddie} alt="" />
-   </div>
+   <Navbar />
    </>
   );
 }
