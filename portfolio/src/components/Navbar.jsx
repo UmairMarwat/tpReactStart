@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 
 
 export default function Navbar(){
@@ -7,10 +9,10 @@ export default function Navbar(){
                 Logo
             </div>
             <ul className=" flex flex-row text-orange-400 gap-4">
-                <li>Home</li>
-                <li>About</li>
-                <li>Services</li>
-                <li>Contact Us</li>
+                <Link to={"/"}>Home</Link>
+                <Link to={"/about"}>About</Link>
+                <Link to={"/services"}>Services</Link>
+                <Link to={"/contactus"}>Contact Us</Link>
             </ul>
         </div>
     )
