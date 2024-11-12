@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import Hero from "../components/Hero"
+import NumberCounter from "../components/NumberCounter";
 import SimpleSlider from "../components/SimpleSlider";
 
 const Home = () =>{
@@ -8,6 +9,7 @@ return (
         <Hero />
         <Card />
         <SimpleSlider />
+        <NumberCounter />
     </div>
 )
 }
