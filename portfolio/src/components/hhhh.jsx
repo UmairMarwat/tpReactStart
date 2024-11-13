@@ -11,7 +11,7 @@ export default function Navbar() {
             <ul className="flex flex-row text-orange-400 gap-4">
                 <li>
                     <Link
-                        className={`hover:text-blue-500  hover:font-bold ${location.pathname === "/" ? "text-blue-500" : "text-red-400"}`}
+                        className={`hover:text-blue-500 hover:font-bold ${location.pathname === "/" ? "text-blue-500" : ""}`}
                         to="/"
                     >
                         Home
@@ -19,7 +19,7 @@ export default function Navbar() {
                 </li>
                 <li>
                     <Link
-                        className={`hover:text-blue-500 hover:font-bold ${location.pathname === "/about" ? "text-blue-500" : "text-red-400"}`}
+                        className={`hover:text-blue-500 hover:font-bold ${location.pathname === "/about" ? "text-blue-500" : ""}`}
                         to="/about"
                     >
                         About
