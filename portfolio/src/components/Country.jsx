@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 export default function Country() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
         axios
-            .get('https://restcountries.com/v3.1/all')
+            .get("https://restcountries.com/v3.1/all")
             .then((response) => {
-                const country = response.data.find((c) => c.name.common === "India");
-                setData(country);
+                setData(response.data);
             })
             .catch((error) => {
-                console.log("Error in fetching", error);
+                console.log("API not calling", error);
             });
     }, []);
 
@@ -24,11 +23,30 @@ export default function Country() {
     return (
         <div>
             <div className="bg-black my-5">
-                <h3 className="text-3xl font-bold text-green-300">{data.name.common}</h3>
-                <h3 className="text-3xl font-bold text-green-300">{data.population}</h3>
-                <h3 className="text-3xl font-bold text-green-300">{data.capital}</h3>
-                <img src={data.flags.png} alt="Flag" />
-
+                <h3 className="text-5xl text-center">All countries</h3>
+                <div className="flex flex-col gap-5">
+                    {data.map((i) => (
+                        <div  className="flex flex-col gap-5">
+                            <h3 className="text-3xl font-bold text-green-300">
+                                Country: {i.name.common}
+                            </h3>
+                            <h3 className="text-3xl font-bold text-green-300">
+                                Country: {i.name.official}
+                            </h3>
+                            <h3 className="text-3xl font-bold text-green-300">
+                                Population: {i.population}
+                            </h3>
+                            <h3 className="text-3xl font-bold text-green-300">
+                                Capital: {i.capital }
+                            </h3>
+                            <img
+                                src={i.flags.png}
+                                
+                                className="w-32"
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
